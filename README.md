@@ -3,7 +3,7 @@ The alien's eye moves and always tracks your mouse cursor and blinks occasionall
 
 
 # Original CodePen
-https://codepen.io/eduardosada/pen/mRZevM
+https://codepen.io/Chuloo/pen/GQBLpv
 
 
 ![Alien](https://raw.githubusercontent.com/tatilattanzi/js-eye-tracking-alien/master/src/img/alien.png)
