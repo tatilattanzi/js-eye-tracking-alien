@@ -1,32 +1,10 @@
-let cursorPos = { x: 0, y: 0 };
-let eye = document.querySelector(".eyes");
-let eyeOffset = getOffset(eye);
-let centerX = eyeOffset.x + eye.offsetWidth / 2;
-let centerY = eyeOffset.y + eye.offsetHeight / 2;
+let ufo = document.querySelector('.ufo');
 
-function getOffset(element) {
-	element = element.getBoundingClientRect();
-	
-	return {
-		x: element.left + window.scrollX,
-		y: element.top + window.scrollY
-	};
-  
-}
-
-function rotateEye() {
-	let angle = -Math.atan2(cursorPos.x - centerX, cursorPos.y - centerY) * 180 / Math.PI - 180;
-    eye.style.transform = `rotate(${angle}deg) translateX(0.1em)`;
-};
-
-function mousemove(event) {
-	cursorPos = {
-		x: event.clientX,
-		y: event.clientY
-	};
-	
-	rotateEye();
-  
-}
-
-window.addEventListener("mousemove", mousemove);
+ufo.addEventListener('mousemove', (e) => {
+  let eyes = document.querySelector('.eyes');
+  let mouseX = (eyes.getBoundingClientRect().left); 
+  let mouseY = (eyes.getBoundingClientRect().top);
+  let radianDegrees = Math.atan2(e.pageX - mouseX, e.pageY - mouseY);
+  let rotationDegrees = (radianDegrees * (180/ Math.PI) * -1) + 180;
+  eyes.style.transform = `rotate(${rotationDegrees}deg)`
+});
